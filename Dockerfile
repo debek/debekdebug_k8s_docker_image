@@ -12,7 +12,8 @@ RUN \
   apt-get install -y software-properties-common && \
   apt-get install -y curl git htop man unzip vim wget \
   pwgen python3-pip python mlocate awscli apt-transport-https \
-  ca-certificates gnupg tig ncdu oathtool mtr pigz gpa tree vim net-tools sudo && \
+  ca-certificates gnupg tig ncdu oathtool mtr pigz gpa tree vim net-tools sudo \
+  iputils-ping telnet netcat && \
   rm -rf /var/lib/apt/lists/*
 
 # Add files.
@@ -26,4 +27,4 @@ ENV HOME /root
 WORKDIR /root
 
 # Define default command.
-CMD ["bash"]
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
