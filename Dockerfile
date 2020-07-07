@@ -13,7 +13,7 @@ RUN \
   apt-get install -y curl git htop man unzip vim wget \
   pwgen python3-pip python mlocate awscli apt-transport-https \
   ca-certificates gnupg tig ncdu oathtool mtr pigz gpa tree vim net-tools sudo \
-  iputils-ping telnet netcat tcpdump && \
+  iputils-ping telnet netcat tcpdump nmap && \
   rm -rf /var/lib/apt/lists/*
 
 # Add files.
