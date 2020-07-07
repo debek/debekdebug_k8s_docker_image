@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debekdebug-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: debek
+  template:
+    metadata:
+      name: debekdebug-pod
+      labels:
+        pod: debek
+    spec:
+      containers:
+      - name: debekdebug
+        image: debek/debekdebug:latest
+        imagePullPolicy: Always
+        ports:
+        - name: debek-port
+          containerPort: 1234
+#      nodeSelector:
+#        kubernetes.io/hostname: minikube-m02
+
